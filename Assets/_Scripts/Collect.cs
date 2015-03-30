@@ -3,11 +3,11 @@ using System.Collections;
 
 public class Collect : MonoBehaviour {
 
-	public GameObject gameController;
+	GameObject gameController;
 
 	// Use this for initialization
 	void Start () {
-
+		gameController = GameObject.FindGameObjectWithTag ("GameController");
 	}
 	
 	// Update is called once per frame
@@ -22,7 +22,6 @@ public class Collect : MonoBehaviour {
 	}
 
 	void OnDestroy() {
-		gameController = GameObject.FindWithTag ("GameController");
 		gameController.GetComponent<GameController> ().IncrementScore ();
 	}
 }
