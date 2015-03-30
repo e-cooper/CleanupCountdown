@@ -3,9 +3,11 @@ using System.Collections;
 
 public class Collect : MonoBehaviour {
 
+	public GameObject gameController;
+
 	// Use this for initialization
 	void Start () {
-		Cursor.lockState = CursorLockMode.Locked;
+
 	}
 	
 	// Update is called once per frame
@@ -17,5 +19,10 @@ public class Collect : MonoBehaviour {
 		if (other.tag == "Player") {
 			Destroy (gameObject);
 		}
+	}
+
+	void OnDestroy() {
+		gameController = GameObject.FindWithTag ("GameController");
+		gameController.GetComponent<GameController> ().IncrementScore ();
 	}
 }
