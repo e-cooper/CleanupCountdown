@@ -15,10 +15,14 @@ public class Collect : MonoBehaviour {
 
 	}
 
-	void OnTriggerEnter(Collider other) {
+	public void CollectItem() {
+		gameController.GetComponent<GameController> ().IncrementScore ();
+		Destroy (gameObject);
+	}
+	/*void OnTriggerEnter(Collider other) {
 		if (other.tag == "Player") {
 			gameController.GetComponent<GameController> ().IncrementScore ();
 			Destroy (gameObject);
 		}
-	}
+	}*/
 }
