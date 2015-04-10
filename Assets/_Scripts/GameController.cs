@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour {
 		gameOver = false;
 		// Lock cursor in place unless Esc is pressed
 		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;
 	}
 
 	void Update () {
