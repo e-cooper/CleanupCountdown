@@ -41,10 +41,11 @@ public class GameController : MonoBehaviour {
 	
 	private void GameOverDisplay () {
 		if (win) {
-			gameOverText.text = "You win!";
+			gameOverText.text = "Room clean!";
 			scoreText.text = "Score: " + score;
 		} else {
-			gameOverText.text = "You lose...";
+			gameOverText.text = "Time's up!";
+			scoreText.text = "Score: " + score;
 		}
 	}
 	
