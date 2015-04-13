@@ -19,10 +19,5 @@ public class Collect : MonoBehaviour {
 		gameController.GetComponent<GameController> ().IncrementScore ();
 		Destroy (gameObject);
 	}
-	/*void OnTriggerEnter(Collider other) {
-		if (other.tag == "Player") {
-			gameController.GetComponent<GameController> ().IncrementScore ();
-			Destroy (gameObject);
-		}
-	}*/
+	
 }
