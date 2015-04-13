@@ -8,6 +8,7 @@ public class Replace : MonoBehaviour {
 	public GameObject neatBooks;
 	public GameObject neatDrawers;
 	public GameObject neatRug;
+	public GameObject neatChest;
 	
 	// Use this for initialization
 	void Start () {
@@ -29,11 +30,14 @@ public class Replace : MonoBehaviour {
 		} else if (destroyedObj.tag == "MessyPapers") {
 			replacement = Instantiate (neatPapers, spawnPos, spawnRotation) as GameObject;
 		} else if (destroyedObj.tag == "MessyBooks") {
+			spawnPos.y += 0.25f;
 			replacement = Instantiate (neatBooks, spawnPos, spawnRotation) as GameObject;
 		} else if (destroyedObj.tag == "MessyDrawers") {
 			replacement = Instantiate (neatDrawers, spawnPos, spawnRotation) as GameObject;
 		} else if (destroyedObj.tag == "MessyRug") {
 			replacement = Instantiate (neatRug, spawnPos, spawnRotation) as GameObject;
+		} else if (destroyedObj.tag == "MessyChest") {
+			replacement = Instantiate (neatChest, spawnPos, spawnRotation) as GameObject;
 		}
 	}
 }

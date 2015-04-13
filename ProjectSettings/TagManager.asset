@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Pickup
   - MessyBed
+  - MessyBooks
+  - MessyPapers
+  - MessyRug
+  - MessyDrawers
+  - MessyChest
   layers:
   - Default
   - TransparentFX

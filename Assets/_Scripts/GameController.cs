@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour {
 		// Lock cursor in place unless Esc is pressed
 		Cursor.lockState = CursorLockMode.Locked;
 		Cursor.visible = false;
+		goalScore = GameObject.FindGameObjectsWithTag ("Pickup").Length;
 	}
 
 	void Update () {

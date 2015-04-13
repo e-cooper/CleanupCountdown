@@ -3,6 +3,8 @@ using System.Collections;
 
 public class HandleDestroy : MonoBehaviour {
 
+	private bool isQuitting = false;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -13,7 +15,14 @@ public class HandleDestroy : MonoBehaviour {
 	
 	}
 
+	void OnApplicationQuit() {
+		isQuitting = true;
+	}
+
 	void OnDestroy() {
-		GameObject.FindGameObjectWithTag("GameController").GetComponent<Replace>().ReplaceObject(gameObject);
+		if (!isQuitting) {
+			GameObject.FindGameObjectWithTag ("GameController")
+				.GetComponent<Replace> ().ReplaceObject (gameObject);
+		}
 	}
 }
