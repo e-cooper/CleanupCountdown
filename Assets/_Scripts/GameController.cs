@@ -6,6 +6,8 @@ public class GameController : MonoBehaviour {
 	public UnityEngine.UI.Text gameOverText, scoreText;
 	public float resetDelay;
 	public int goalScore;
+	public AudioSource timer;
+	public AudioSource yay;
 
 	private int score;
 	private float resetTimer;
@@ -39,14 +41,24 @@ public class GameController : MonoBehaviour {
 		win = endState;
 		Time.timeScale = 0;
 	}
+
+	private bool soundStarted = false;
 	
 	private void GameOverDisplay () {
 		if (win) {
 			gameOverText.text = "Room clean!";
 			scoreText.text = "Score: " + score;
+			if (!soundStarted) {
+				yay.Play();
+				soundStarted = true;
+			}
 		} else {
 			gameOverText.text = "Time's up!";
 			scoreText.text = "Score: " + score;
+			if (!soundStarted) {
+				timer.Play();
+				soundStarted = true;
+			}
 		}
 	}
 	

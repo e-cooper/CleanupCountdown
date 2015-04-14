@@ -5,7 +5,7 @@ public class CountdownTimer : MonoBehaviour {
 
 	public float time;
 	public UnityEngine.UI.Text counterText;
-	
+
 	void Update () {
 		
 		time -= Time.deltaTime;
@@ -17,6 +17,7 @@ public class CountdownTimer : MonoBehaviour {
 		if (time > 0) {
 			counterText.text = minutes + ":" + seconds + ":" + fraction;
 		} else {
+			counterText.text = "0:0:00";
 			gameObject.GetComponent<GameController>().GameOver(false);
 		}
 		

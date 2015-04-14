@@ -4,6 +4,7 @@ using System.Collections;
 public class Collect : MonoBehaviour {
 
 	GameObject gameController;
+	public AudioSource audio;
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +17,7 @@ public class Collect : MonoBehaviour {
 	}
 
 	public void CollectItem() {
+		audio.Play ();
 		gameController.GetComponent<GameController> ().IncrementScore ();
 		Destroy (gameObject);
 	}
